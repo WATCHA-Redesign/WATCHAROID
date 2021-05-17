@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black"
+        tools:context=".ui.search.view.SearchFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraint_search_search_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/transparent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageButton
+                android:id="@+id/btn_search_Back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="44dp"
+                android:layout_marginBottom="18dp"
+                android:background="@drawable/icon_search_back"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ContentDescription" />
+
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/search_view_search"
+                style="@style/search_view"
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="10dp"
+                android:paddingLeft="-16dp"
+                android:paddingRight="-16dp"
+                android:theme="@style/search_view"
+                app:layout_constraintBottom_toBottomOf="@id/btn_search_Back"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/btn_search_Back"
+                app:layout_constraintTop_toTopOf="@id/btn_search_Back" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:overScrollMode="never"
+            android:scrollbars="none"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/constraint_search_search_view">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraint_search_popular"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/tv_search_popular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/search_fg_popular"
+                        android:textColor="@color/watcha_white"
+                        android:textSize="14sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_search_all_popular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginEnd="12dp"
+                        android:text="@string/search_fg_show_all"
+                        android:textColor="@color/watcha_gray"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/tv_search_popular" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:layout_width="match_parent"
+                        android:layout_height="106dp"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="24dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_search_popular" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <View
+                    android:id="@+id/view_search_under_popular"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_marginHorizontal="12dp"
+                    android:background="@color/navigation"
+                    app:layout_constraintTop_toBottomOf="@id/constraint_search_popular" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraint_search_high_score"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/view_search_under_popular">
+
+                    <TextView
+                        android:id="@+id/tv_search_high_score"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="24dp"
+                        android:text="@string/search_fg_high_score"
+                        android:textColor="@color/watcha_white"
+                        android:textSize="14sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_search_all_high_score"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginEnd="12dp"
+                        android:text="@string/search_fg_show_all"
+                        android:textColor="@color/watcha_gray"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/tv_search_high_score" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_search_high_score"
+                        android:layout_width="match_parent"
+                        android:layout_height="302dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="24dp"
+                        android:clipToPadding="false"
+                        android:orientation="horizontal"
+                        android:overScrollMode="never"
+                        android:paddingStart="12dp"
+                        android:paddingEnd="0dp"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_search_high_score" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <View
+                    android:id="@+id/view_search_under_high_score"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_marginHorizontal="12dp"
+                    android:background="@color/navigation"
+                    app:layout_constraintTop_toBottomOf="@id/constraint_search_high_score" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraint_search_crew"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:paddingBottom="28dp"
+                    app:layout_constraintTop_toBottomOf="@id/view_search_under_high_score">
+
+                    <TextView
+                        android:id="@+id/tv_search_crew"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="24dp"
+                        android:text="@string/search_fg_crew"
+                        android:textColor="@color/watcha_white"
+                        android:textSize="14sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_search_all_crew"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginEnd="12dp"
+                        android:text="@string/search_fg_show_all"
+                        android:textColor="@color/watcha_gray"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/tv_search_crew" />
+
+                    <TextView
+                        android:id="@+id/tv_search_crew_content_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="@string/search_fg_crew_dummy1"
+                        android:textColor="@color/watcha_lightgray"
+                        android:textSize="16sp"
+                        app:layout_constraintStart_toStartOf="@id/tv_search_crew"
+                        app:layout_constraintTop_toBottomOf="@id/tv_search_crew" />
+
+                    <TextView
+                        android:id="@+id/tv_search_collection_crew_writer_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="6dp"
+                        android:text="@string/search_fg_crew_writer1"
+                        android:textColor="@color/watcha_gray"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toBottomOf="@id/tv_search_crew_content_1"
+                        app:layout_constraintStart_toEndOf="@id/tv_search_crew_content_1"
+                        app:layout_constraintTop_toTopOf="@id/tv_search_crew_content_1" />
+
+                    <TextView
+                        android:id="@+id/tv_search_crew_content_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/search_fg_crew_dummy2"
+                        android:textColor="@color/watcha_lightgray"
+                        android:textSize="16sp"
+                        app:layout_constraintStart_toStartOf="@id/tv_search_crew_content_1"
+                        app:layout_constraintTop_toBottomOf="@id/tv_search_crew_content_1" />
+
+                    <TextView
+                        android:id="@+id/tv_search_collection_crew_writer_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="6dp"
+                        android:text="@string/search_fg_crew_writer2"
+                        android:textColor="@color/watcha_gray"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toBottomOf="@id/tv_search_crew_content_2"
+                        app:layout_constraintStart_toEndOf="@id/tv_search_crew_content_2"
+                        app:layout_constraintTop_toTopOf="@id/tv_search_crew_content_2" />
+
+                    <TextView
+                        android:id="@+id/tv_search_crew_content_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/search_fg_crew_dummy3"
+                        android:textColor="@color/watcha_lightgray"
+                        android:textSize="16sp"
+                        app:layout_constraintStart_toStartOf="@id/tv_search_crew_content_1"
+                        app:layout_constraintTop_toBottomOf="@id/tv_search_crew_content_2" />
+
+                    <TextView
+                        android:id="@+id/tv_search_collection_crew_writer_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="6dp"
+                        android:text="@string/search_fg_crew_writer3"
+                        android:textColor="@color/watcha_gray"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toBottomOf="@id/tv_search_crew_content_3"
+                        app:layout_constraintStart_toEndOf="@id/tv_search_crew_content_3"
+                        app:layout_constraintTop_toTopOf="@id/tv_search_crew_content_3" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <View
+                    android:id="@+id/view_search_under_crew"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_marginHorizontal="12dp"
+                    android:background="@color/navigation"
+                    app:layout_constraintTop_toBottomOf="@id/constraint_search_crew" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraint_search_mate"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:paddingBottom="44dp"
+                    app:layout_constraintTop_toBottomOf="@id/view_search_under_crew">
+
+                    <TextView
+                        android:id="@+id/tv_search_mate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="24dp"
+                        android:text="@string/search_fg_mate"
+                        android:textColor="@color/watcha_white"
+                        android:textSize="14sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
