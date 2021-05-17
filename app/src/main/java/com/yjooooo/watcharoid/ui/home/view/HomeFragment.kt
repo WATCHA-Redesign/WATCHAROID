@@ -8,8 +8,8 @@ import androidx.fragment.app.viewModels
 import com.yjooooo.watcharoid.R
 import com.yjooooo.watcharoid.databinding.FragmentHomeBinding
 import com.yjooooo.watcharoid.ui.base.BaseFragment
-import com.yjooooo.watcharoid.ui.home.HomeViewModel
 import com.yjooooo.watcharoid.ui.home.adapter.BannerViewPagerAdapter
+import com.yjooooo.watcharoid.ui.home.viewmodel.HomeViewModel
 
 
 class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
@@ -21,6 +21,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
         super.onCreateView(inflater, container, savedInstanceState)
         binding.lifecycleOwner = this
         homeViewModel.setBannerData()
+        fadeInAtScrolling()
         setBannerViewPagerAdapter()
         setBannerListObserve()
         return binding.root
@@ -34,6 +35,21 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
         homeViewModel.bannerList.observe(viewLifecycleOwner) { bannerList ->
             with(binding.vpHomeBanner.adapter as BannerViewPagerAdapter) {
                 setBanners(bannerList)
+            }
+        }
+    }
+
+    private fun fadeInAtScrolling() {
+        binding.constraintHomeTop.alpha = 0f
+        binding.scrollviewHome.setOnScrollChangeListener { v, scrollX, scrollY, oldScrollX, oldScrollY ->
+            if (scrollY in 600..900 && binding.constraintHomeTop.alpha < 1f) {
+                binding.constraintHomeTop.alpha += 0.05f
+            } else if (scrollY <= 600 && binding.constraintHomeTop.alpha > 0f) {
+                binding.constraintHomeTop.alpha -= 0.05f
+            } else if (scrollY < 300) {
+                binding.constraintHomeTop.alpha = 0f
+            } else if (scrollY > 900) {
+                binding.constraintHomeTop.alpha = 1f
             }
         }
     }
