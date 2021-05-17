@@ -42,11 +42,11 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
     private fun fadeInAtScrolling() {
         binding.constraintHomeTop.alpha = 0f
         binding.scrollviewHome.setOnScrollChangeListener { v, scrollX, scrollY, oldScrollX, oldScrollY ->
-            if (scrollY in 600..900 && binding.constraintHomeTop.alpha < 1f) {
+            if (scrollY in 700..900 && binding.constraintHomeTop.alpha < 1f) {
                 binding.constraintHomeTop.alpha += 0.05f
-            } else if (scrollY <= 600 && binding.constraintHomeTop.alpha > 0f) {
-                binding.constraintHomeTop.alpha -= 0.05f
-            } else if (scrollY < 300) {
+            } else if (scrollY <= 700 && binding.constraintHomeTop.alpha > 0f) {
+                binding.constraintHomeTop.alpha -= 0.08f
+            } else if (scrollY < 700) {
                 binding.constraintHomeTop.alpha = 0f
             } else if (scrollY > 900) {
                 binding.constraintHomeTop.alpha = 1f
