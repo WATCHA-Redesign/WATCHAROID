@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.viewModels
+import androidx.fragment.app.activityViewModels
 import com.yjooooo.watcharoid.R
 import com.yjooooo.watcharoid.databinding.FragmentHomeBinding
 import com.yjooooo.watcharoid.ui.base.BaseFragment
@@ -13,14 +13,14 @@ import com.yjooooo.watcharoid.ui.home.viewmodel.HomeViewModel
 
 
 class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
-    private val homeViewModel: HomeViewModel by viewModels()
+    private val homeViewModel: HomeViewModel by activityViewModels()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         super.onCreateView(inflater, container, savedInstanceState)
         binding.lifecycleOwner = this
-        homeViewModel.setBannerData()
+        homeViewModel.setBannerList()
         fadeInAtScrolling()
         setBannerViewPagerAdapter()
         setBannerListObserve()

@@ -7,12 +7,12 @@ import com.yjooooo.watcharoid.R
 import com.yjooooo.watcharoid.ui.home.model.BannerData
 
 class HomeViewModel : ViewModel() {
-    private val _bannerData = MutableLiveData<List<BannerData>>()
+    private val _bannerList = MutableLiveData<List<BannerData>>()
     val bannerList: LiveData<List<BannerData>>
-        get() = _bannerData
+        get() = _bannerList
 
-    fun setBannerData() {
-        _bannerData.value = mutableListOf(
+    fun setBannerList() {
+        _bannerList.value = mutableListOf(
             BannerData(R.drawable.img_vp_home_1),
             BannerData(R.drawable.img_vp_home_2),
             BannerData(R.drawable.img_vp_home_3),
