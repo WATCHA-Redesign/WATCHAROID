@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
+import com.google.android.material.tabs.TabLayoutMediator
 import com.yjooooo.watcharoid.R
 import com.yjooooo.watcharoid.databinding.FragmentHomeBinding
 import com.yjooooo.watcharoid.ui.base.BaseFragment
@@ -24,11 +25,16 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
         fadeInAtScrolling()
         setBannerViewPagerAdapter()
         setBannerListObserve()
+        setIndicator()
         return binding.root
     }
 
     private fun setBannerViewPagerAdapter() {
         binding.vpHomeBanner.adapter = BannerViewPagerAdapter()
+    }
+
+    private fun setIndicator() {
+        TabLayoutMediator(binding.tabHome, binding.vpHomeBanner) { tab, position -> }.attach()
     }
 
     private fun setBannerListObserve() {

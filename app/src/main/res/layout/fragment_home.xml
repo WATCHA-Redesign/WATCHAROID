@@ -18,6 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:overScrollMode="never"
+            android:scrollbars="none"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
@@ -32,6 +33,19 @@
                     android:overScrollMode="never"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/tab_home"
+                    android:layout_width="80dp"
+                    android:layout_height="4dp"
+                    android:layout_marginStart="12dp"
+                    android:background="@color/transparent"
+                    android:layout_marginBottom="16dp"
+                    app:layout_constraintBottom_toBottomOf="@id/vp_home_banner"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:tabBackground="@drawable/home_indicator_selector"
+                    app:tabGravity="center"
+                    app:tabIndicatorHeight="0dp"/>
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
