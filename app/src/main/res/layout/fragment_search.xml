@@ -10,7 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/black"
+        android:background="@color/watcha_bg"
         tools:context=".ui.search.view.SearchFragment">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -145,14 +145,14 @@
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/rv_search_high_score"
                         android:layout_width="match_parent"
-                        android:layout_height="302dp"
+                        android:layout_height="350dp"
                         android:layout_marginTop="16dp"
-                        android:layout_marginBottom="24dp"
+                        android:layout_marginBottom="12dp"
                         android:clipToPadding="false"
                         android:orientation="horizontal"
                         android:overScrollMode="never"
-                        android:paddingStart="12dp"
-                        android:paddingEnd="0dp"
+                        android:paddingStart="4dp"
+                        android:paddingEnd="10dp"
                         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"

@@ -13,9 +13,8 @@ class SearchViewModel: ViewModel() {
 
     fun setHighScoreList() {
         _highScoreList.value = mutableListOf(
-            HighScoreData(R.drawable.img_rv_high_score),
-            HighScoreData(R.drawable.img_rv_high_score),
-            HighScoreData(R.drawable.img_rv_high_score)
+            HighScoreData(R.drawable.img_rv_high_score_1),
+            HighScoreData(R.drawable.img_rv_high_score_2)
         )
     }
 }

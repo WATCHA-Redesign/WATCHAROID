@@ -10,7 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/black"
+        android:background="@color/watcha_bg"
         tools:context=".ui.home.view.HomeFragment">
 
         <ScrollView
@@ -50,7 +50,7 @@
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="3000dp"
-                    android:background="@color/watcha_pink"
+                    android:background="@color/watcha_bg"
                     app:layout_constraintTop_toBottomOf="@id/vp_home_banner" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
