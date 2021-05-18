@@ -49,10 +49,11 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
         binding.constraintHomeTop.alpha = 0f
         binding.scrollviewHome.setOnScrollChangeListener { v, scrollX, scrollY, oldScrollX, oldScrollY ->
             if (scrollY in 700..900 && binding.constraintHomeTop.alpha < 1f) {
-                binding.constraintHomeTop.alpha += 0.05f
+                binding.constraintHomeTop.alpha += 0.04f
             } else if (scrollY <= 700 && binding.constraintHomeTop.alpha > 0f) {
-                binding.constraintHomeTop.alpha -= 0.08f
-            } else if (scrollY < 700) {
+                binding.constraintHomeTop.alpha -= 0.04f
+            }
+            if (scrollY < 200) {
                 binding.constraintHomeTop.alpha = 0f
             } else if (scrollY > 900) {
                 binding.constraintHomeTop.alpha = 1f
