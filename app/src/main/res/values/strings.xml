@@ -18,4 +18,8 @@
     <string name="search_fg_crew_writer2">| mignon님 Pick!</string>
     <string name="search_fg_crew_dummy3">월요병 퇴치해주는 힐링 드라마</string>
     <string name="search_fg_crew_writer3">| 현경님 Pick!</string>
+
+    <string name="home_fg_all">모두 보기 ></string>
+    <string name="home_fg_continue">결말이 궁금하지 않으세요?</string>
+    <string name="home_fg_today">오늘은 이 영화 어때요?</string>
 </resources>
