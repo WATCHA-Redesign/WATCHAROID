@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.observe
 import com.google.android.material.tabs.TabLayoutMediator
 import com.yjooooo.watcharoid.R
 import com.yjooooo.watcharoid.databinding.FragmentHomeBinding

@@ -18,4 +18,23 @@
     <string name="search_fg_crew_writer2">| mignon님 Pick!</string>
     <string name="search_fg_crew_dummy3">월요병 퇴치해주는 힐링 드라마</string>
     <string name="search_fg_crew_writer3">| 현경님 Pick!</string>
+
+    <string name="search_mate_actor1">윤여정</string>
+    <string name="search_mate_actor2">박찬욱</string>
+    <string name="search_mate_actor3">서현경</string>
+    <string name="search_mate_actor4">로버트패틴슨</string>
+    <string name="search_mate_actor5">김민영</string>
+    <string name="search_mate_actor6">앤해서웨이</string>
+    <string name="search_mate_actor7">엠마왓슨</string>
+    <string name="search_mate_actor8">변요한</string>
+
+    <string name="search_mate_director1">봉준호</string>
+    <string name="search_mate_director2">팀버튼</string>
+    <string name="search_mate_director3">크리스토퍼놀란</string>
+    <string name="search_mate_director4">김초희</string>
+    <string name="search_mate_director5">이병헌</string>
+    <string name="search_mate_director6">김은숙</string>
+    <string name="search_mate_director7">김순옥</string>
+
+
 </resources>
