@@ -1,5 +1,6 @@
 package com.yjooooo.watcharoid.ui.main.view
 
+import android.os.Build
 import android.os.Bundle
 import androidx.viewpager2.widget.ViewPager2
 import com.yjooooo.watcharoid.R
@@ -12,7 +13,9 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
         super.onCreate(savedInstanceState)
         //StatusBarUtil.setStatusBar(this, resources.getColor(R.color.white, null))
         window.apply {
-            setDecorFitsSystemWindows(false)
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+                setDecorFitsSystemWindows(false)
+            }
         }
         setMainViewpagerAdapter()
         setOnBottomNavigationClick()

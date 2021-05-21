@@ -5,10 +5,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.observe
 import com.yjooooo.watcharoid.R
 import com.yjooooo.watcharoid.databinding.FragmentSearchBinding
 import com.yjooooo.watcharoid.ui.base.BaseFragment
 import com.yjooooo.watcharoid.ui.search.adapter.HighScoreRcvAdapter
+import com.yjooooo.watcharoid.ui.search.adapter.TopSearchRcvAdapter
 import com.yjooooo.watcharoid.ui.search.viewmodel.SearchViewModel
 
 
@@ -23,6 +25,11 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>(R.layout.fragment_sea
         searchViewModel.setHighScoreList()
         setHighScoreRcvAdapter()
         setHighScoreListObserve()
+
+        searchViewModel.setTopSearchContentList()
+        setTopSearchRcvAdapter()
+        setTopSearchContentListObserve()
+
         return binding.root
     }
 
@@ -34,6 +41,19 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>(R.layout.fragment_sea
         searchViewModel.highScoreList.observe(viewLifecycleOwner) { highScoreList ->
             with(binding.rvSearchHighScore.adapter as HighScoreRcvAdapter) {
                 setHighScoreList(highScoreList)
+            }
+        }
+    }
+
+    private fun setTopSearchRcvAdapter() {
+        binding.rvSearchTop.adapter =
+            TopSearchRcvAdapter()
+    }
+
+    private fun setTopSearchContentListObserve() {
+        searchViewModel.topSearchContentList.observe(viewLifecycleOwner) { topSearchList ->
+            with(binding.rvSearchTop.adapter as TopSearchRcvAdapter) {
+                setTopSearchList(topSearchList)
             }
         }
     }
