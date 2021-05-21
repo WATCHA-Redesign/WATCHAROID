@@ -60,7 +60,7 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="0dp">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/constraint_search_popular"
@@ -94,7 +94,7 @@
 
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/rv_search_top"
-                        android:layout_width="347dp"
+                        android:layout_width="match_parent"
                         android:layout_height="106dp"
                         android:layout_marginTop="16dp"
                         android:layout_marginBottom="24dp"
@@ -105,7 +105,7 @@
                         android:clipToPadding="false"
                         android:orientation="horizontal"
                         android:overScrollMode="never"
-                        android:paddingStart="4dp"
+                        android:paddingStart="14dp"
                         android:paddingEnd="10dp"/>
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
@@ -287,15 +287,15 @@
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/constraint_search_mate"
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:paddingBottom="44dp"
-                    app:layout_constraintTop_toBottomOf="@id/view_search_under_crew">
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/view_search_under_crew"
+                    app:layout_constraintBottom_toBottomOf="parent">
 
                     <TextView
                         android:id="@+id/tv_search_mate"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="12dp"
+                        android:layout_marginStart="14dp"
                         android:layout_marginTop="24dp"
                         android:text="@string/search_fg_mate"
                         android:textColor="@color/watcha_white"
@@ -307,21 +307,20 @@
                     <com.google.android.material.chip.ChipGroup
                         android:id="@+id/chipgroup"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginTop="57dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="14dp"
+                        android:layout_marginTop="14dp"
+                        android:layout_marginBottom="42dp"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent">
+                        app:layout_constraintTop_toBottomOf="@id/tv_search_mate"
+                        app:layout_constraintBottom_toBottomOf="parent">
 
-                        <!-- 코드 작성 -->
                         <com.google.android.material.chip.Chip
                             style="@style/Widget.MaterialComponents.Chip.Choice"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginRight="6dp"
                             android:layout_marginBottom="10dp"
-                            android:width="28dp"
-                            android:height="66dp"
                             android:checkable="false"
                             app:chipBackgroundColor="@color/watcha_black"
                             app:chipStrokeColor="@color/watcha_pink"
@@ -336,8 +335,6 @@
                             android:layout_height="wrap_content"
                             android:layout_marginRight="6dp"
                             android:layout_marginBottom="10dp"
-                            android:width="28dp"
-                            android:height="66dp"
                             android:checkable="false"
                             app:chipBackgroundColor="@color/watcha_pink"
                             android:textSize="16sp"
@@ -349,8 +346,6 @@
                             android:layout_height="wrap_content"
                             android:layout_marginRight="6dp"
                             android:layout_marginBottom="10dp"
-                            android:width="28dp"
-                            android:height="66dp"
                             android:checkable="false"
                             app:chipBackgroundColor="@color/watcha_black"
                             app:chipStrokeColor="@color/watcha_pink"
@@ -365,8 +360,6 @@
                             android:layout_height="wrap_content"
                             android:layout_marginRight="6dp"
                             android:layout_marginBottom="10dp"
-                            android:width="28dp"
-                            android:height="66dp"
                             android:checkable="false"
                             app:chipBackgroundColor="@color/watcha_pink"
                             android:textSize="16sp"
@@ -378,8 +371,6 @@
                             android:layout_height="wrap_content"
                             android:layout_marginRight="6dp"
                             android:layout_marginBottom="10dp"
-                            android:width="28dp"
-                            android:height="66dp"
                             android:checkable="false"
                             app:chipBackgroundColor="@color/watcha_pink"
                             android:textSize="16sp"
@@ -391,8 +382,6 @@
                             android:layout_height="wrap_content"
                             android:layout_marginRight="6dp"
                             android:layout_marginBottom="10dp"
-                            android:width="28dp"
-                            android:height="66dp"
                             android:checkable="false"
                             app:chipBackgroundColor="@color/watcha_pink"
                             android:textSize="16sp"
@@ -404,8 +393,6 @@
                             android:layout_height="wrap_content"
                             android:layout_marginRight="6dp"
                             android:layout_marginBottom="10dp"
-                            android:width="28dp"
-                            android:height="66dp"
                             android:checkable="false"
                             app:chipBackgroundColor="@color/watcha_black"
                             app:chipStrokeColor="@color/watcha_pink"
@@ -420,8 +407,6 @@
                             android:layout_height="wrap_content"
                             android:layout_marginRight="6dp"
                             android:layout_marginBottom="10dp"
-                            android:width="28dp"
-                            android:height="66dp"
                             android:checkable="false"
                             app:chipBackgroundColor="@color/watcha_black"
                             app:chipStrokeColor="@color/watcha_pink"
@@ -436,8 +421,6 @@
                             android:layout_height="wrap_content"
                             android:layout_marginRight="6dp"
                             android:layout_marginBottom="10dp"
-                            android:width="28dp"
-                            android:height="66dp"
                             android:checkable="false"
                             app:chipBackgroundColor="@color/watcha_black"
                             app:chipStrokeColor="@color/watcha_pink"
@@ -452,8 +435,6 @@
                             android:layout_height="wrap_content"
                             android:layout_marginRight="6dp"
                             android:layout_marginBottom="10dp"
-                            android:width="28dp"
-                            android:height="66dp"
                             android:checkable="false"
                             app:chipBackgroundColor="@color/watcha_pink"
                             android:textSize="16sp"
@@ -465,8 +446,6 @@
                             android:layout_height="wrap_content"
                             android:layout_marginRight="6dp"
                             android:layout_marginBottom="10dp"
-                            android:width="28dp"
-                            android:height="66dp"
                             android:checkable="false"
                             app:chipBackgroundColor="@color/watcha_pink"
                             android:textSize="16sp"
@@ -478,8 +457,6 @@
                             android:layout_height="wrap_content"
                             android:layout_marginRight="6dp"
                             android:layout_marginBottom="10dp"
-                            android:width="28dp"
-                            android:height="66dp"
                             android:checkable="false"
                             app:chipBackgroundColor="@color/watcha_pink"
                             android:textSize="16sp"
@@ -491,8 +468,6 @@
                             android:layout_height="wrap_content"
                             android:layout_marginRight="6dp"
                             android:layout_marginBottom="10dp"
-                            android:width="28dp"
-                            android:height="66dp"
                             android:checkable="false"
                             app:chipBackgroundColor="@color/watcha_pink"
                             android:textSize="16sp"
@@ -504,8 +479,6 @@
                             android:layout_height="wrap_content"
                             android:layout_marginRight="6dp"
                             android:layout_marginBottom="10dp"
-                            android:width="28dp"
-                            android:height="66dp"
                             android:checkable="false"
                             app:chipBackgroundColor="@color/watcha_black"
                             app:chipStrokeColor="@color/watcha_pink"
@@ -520,8 +493,6 @@
                             android:layout_height="wrap_content"
                             android:layout_marginRight="6dp"
                             android:layout_marginBottom="10dp"
-                            android:width="28dp"
-                            android:height="66dp"
                             android:checkable="false"
                             app:chipBackgroundColor="@color/watcha_black"
                             app:chipStrokeColor="@color/watcha_pink"

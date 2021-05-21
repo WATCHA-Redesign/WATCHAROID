@@ -39,13 +39,13 @@
                     android:layout_width="80dp"
                     android:layout_height="4dp"
                     android:layout_marginStart="12dp"
-                    android:background="@color/transparent"
                     android:layout_marginBottom="16dp"
+                    android:background="@color/transparent"
                     app:layout_constraintBottom_toBottomOf="@id/vp_home_banner"
                     app:layout_constraintStart_toStartOf="parent"
                     app:tabBackground="@drawable/home_indicator_selector"
                     app:tabGravity="center"
-                    app:tabIndicatorHeight="0dp"/>
+                    app:tabIndicatorHeight="0dp" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
@@ -93,6 +93,7 @@
                             android:layout_marginStart="12dp"
                             android:layout_marginTop="8dp"
                             android:orientation="horizontal"
+                            android:overScrollMode="never"
                             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
@@ -137,6 +138,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="8dp"
                             android:orientation="horizontal"
+                            android:overScrollMode="never"
                             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
@@ -183,6 +185,7 @@
                             android:layout_marginTop="8dp"
                             android:layout_marginBottom="26dp"
                             android:orientation="horizontal"
+                            android:overScrollMode="never"
                             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
