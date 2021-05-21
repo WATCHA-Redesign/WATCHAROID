@@ -1,6 +1,7 @@
 package com.yjooooo.watcharoid.ui.home.view
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,11 +12,15 @@ import com.yjooooo.watcharoid.R
 import com.yjooooo.watcharoid.databinding.FragmentHomeBinding
 import com.yjooooo.watcharoid.ui.base.BaseFragment
 import com.yjooooo.watcharoid.ui.home.adapter.BannerViewPagerAdapter
+import com.yjooooo.watcharoid.ui.home.adapter.ContinueListAdapter
+import com.yjooooo.watcharoid.ui.home.adapter.PediaListAdapter
+import com.yjooooo.watcharoid.ui.home.adapter.TodayListAdapter
 import com.yjooooo.watcharoid.ui.home.viewmodel.HomeViewModel
 
 
 class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
     private val homeViewModel: HomeViewModel by activityViewModels()
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -27,6 +32,19 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
         setBannerViewPagerAdapter()
         setBannerListObserve()
         setIndicator()
+
+        homeViewModel.setPediaList()
+        setPediaAdapter()
+        setPediaListObserve()
+
+        homeViewModel.setTodayList()
+        setTodayAdapter()
+        setTodayListObserve()
+
+        homeViewModel.setContinueList()
+        setContinueAdapter()
+        setContinueListObserve()
+
         return binding.root
     }
 
@@ -46,6 +64,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
         }
     }
 
+
     private fun fadeInAtScrolling() {
         binding.constraintHomeTop.alpha = 0f
         binding.scrollviewHome.setOnScrollChangeListener { v, scrollX, scrollY, oldScrollX, oldScrollY ->
@@ -61,5 +80,43 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
             }
         }
     }
+
+    private fun setPediaAdapter(){
+        binding.rvHomePedia.adapter = PediaListAdapter()
+    }
+    
+    private fun setPediaListObserve() {
+        homeViewModel.pediaList.observe(viewLifecycleOwner) {
+            pediaList -> with(binding.rvHomePedia.adapter as PediaListAdapter){
+                setPedia(pediaList)
+            }
+        }
+    }
+
+    private fun setTodayAdapter(){
+        binding.rvHomeToday.adapter = TodayListAdapter()
+    }
+
+    private fun setTodayListObserve() {
+        homeViewModel.todayList.observe(viewLifecycleOwner) {
+                todayList -> with(binding.rvHomeToday.adapter as TodayListAdapter){
+                    setToday(todayList)
+                }
+        }
+    }
+
+    private fun setContinueAdapter(){
+        binding.rvHomeContinue.adapter = ContinueListAdapter()
+    }
+
+    private fun setContinueListObserve() {
+        homeViewModel.continueList.observe(viewLifecycleOwner) {
+                continueList -> with(binding.rvHomeContinue.adapter as ContinueListAdapter){
+                    setContinue(continueList)
+                }
+        }
+    }
+
+
 
 }
