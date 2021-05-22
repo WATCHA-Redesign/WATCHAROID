@@ -98,15 +98,15 @@
                         android:layout_height="106dp"
                         android:layout_marginTop="16dp"
                         android:layout_marginBottom="24dp"
-                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/tv_search_popular"
                         android:clipToPadding="false"
                         android:orientation="horizontal"
                         android:overScrollMode="never"
                         android:paddingStart="14dp"
-                        android:paddingEnd="10dp"/>
+                        android:paddingEnd="10dp"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_search_popular" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -288,8 +288,8 @@
                     android:id="@+id/constraint_search_mate"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:layout_constraintTop_toBottomOf="@id/view_search_under_crew"
-                    app:layout_constraintBottom_toBottomOf="parent">
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/view_search_under_crew">
 
                     <TextView
                         android:id="@+id/tv_search_mate"
@@ -310,196 +310,190 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="14dp"
                         android:layout_marginTop="14dp"
+                        android:layout_marginEnd="34dp"
                         android:layout_marginBottom="42dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/tv_search_mate"
-                        app:layout_constraintBottom_toBottomOf="parent">
+                        app:layout_constraintTop_toBottomOf="@id/tv_search_mate">
 
                         <com.google.android.material.chip.Chip
                             style="@style/Widget.MaterialComponents.Chip.Choice"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginRight="6dp"
                             android:layout_marginBottom="10dp"
                             android:checkable="false"
-                            app:chipBackgroundColor="@color/watcha_black"
-                            app:chipStrokeColor="@color/watcha_pink"
-                            app:chipStrokeWidth="1dp"
+                            android:text="@string/search_mate_director1"
                             android:textColor="@color/watcha_pink"
                             android:textSize="16sp"
-                            android:text="@string/search_mate_director1"/>
-
-                        <com.google.android.material.chip.Chip
-                            style="@style/Widget.MaterialComponents.Chip.Choice"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginRight="6dp"
-                            android:layout_marginBottom="10dp"
-                            android:checkable="false"
-                            app:chipBackgroundColor="@color/watcha_pink"
-                            android:textSize="16sp"
-                            android:text="@string/search_mate_actor1"/>
-
-                        <com.google.android.material.chip.Chip
-                            style="@style/Widget.MaterialComponents.Chip.Choice"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginRight="6dp"
-                            android:layout_marginBottom="10dp"
-                            android:checkable="false"
                             app:chipBackgroundColor="@color/watcha_black"
                             app:chipStrokeColor="@color/watcha_pink"
-                            app:chipStrokeWidth="1dp"
+                            app:chipStrokeWidth="1dp" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:checkable="false"
+                            android:text="@string/search_mate_actor1"
+                            android:textColor="@color/watcha_bg"
+                            android:textSize="16sp"
+                            app:chipBackgroundColor="@color/watcha_pink" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:checkable="false"
+                            android:text="@string/search_mate_director2"
                             android:textColor="@color/watcha_pink"
                             android:textSize="16sp"
-                            android:text="@string/search_mate_director2"/>
-
-                        <com.google.android.material.chip.Chip
-                            style="@style/Widget.MaterialComponents.Chip.Choice"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginRight="6dp"
-                            android:layout_marginBottom="10dp"
-                            android:checkable="false"
-                            app:chipBackgroundColor="@color/watcha_pink"
-                            android:textSize="16sp"
-                            android:text="@string/search_mate_actor2"/>
-
-                        <com.google.android.material.chip.Chip
-                            style="@style/Widget.MaterialComponents.Chip.Choice"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginRight="6dp"
-                            android:layout_marginBottom="10dp"
-                            android:checkable="false"
-                            app:chipBackgroundColor="@color/watcha_pink"
-                            android:textSize="16sp"
-                            android:text="@string/search_mate_actor3"/>
-
-                        <com.google.android.material.chip.Chip
-                            style="@style/Widget.MaterialComponents.Chip.Choice"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginRight="6dp"
-                            android:layout_marginBottom="10dp"
-                            android:checkable="false"
-                            app:chipBackgroundColor="@color/watcha_pink"
-                            android:textSize="16sp"
-                            android:text="@string/search_mate_actor4"/>
-
-                        <com.google.android.material.chip.Chip
-                            style="@style/Widget.MaterialComponents.Chip.Choice"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginRight="6dp"
-                            android:layout_marginBottom="10dp"
-                            android:checkable="false"
                             app:chipBackgroundColor="@color/watcha_black"
                             app:chipStrokeColor="@color/watcha_pink"
-                            app:chipStrokeWidth="1dp"
-                            android:textColor="@color/watcha_pink"
-                            android:textSize="16sp"
-                            android:text="@string/search_mate_director3"/>
+                            app:chipStrokeWidth="1dp" />
 
                         <com.google.android.material.chip.Chip
                             style="@style/Widget.MaterialComponents.Chip.Choice"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginRight="6dp"
                             android:layout_marginBottom="10dp"
                             android:checkable="false"
+                            android:text="@string/search_mate_actor2"
+                            android:textColor="@color/watcha_bg"
+                            android:textSize="16sp"
+                            app:chipBackgroundColor="@color/watcha_pink" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:checkable="false"
+                            android:text="@string/search_mate_actor3"
+                            android:textColor="@color/watcha_bg"
+                            android:textSize="16sp"
+                            app:chipBackgroundColor="@color/watcha_pink" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:checkable="false"
+                            android:text="@string/search_mate_actor4"
+                            android:textColor="@color/watcha_bg"
+                            android:textSize="16sp"
+                            app:chipBackgroundColor="@color/watcha_pink" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:checkable="false"
+                            android:text="@string/search_mate_director3"
+                            android:textColor="@color/watcha_pink"
+                            android:textSize="16sp"
                             app:chipBackgroundColor="@color/watcha_black"
                             app:chipStrokeColor="@color/watcha_pink"
-                            app:chipStrokeWidth="1dp"
-                            android:textColor="@color/watcha_pink"
-                            android:textSize="16sp"
-                            android:text="@string/search_mate_director4"/>
+                            app:chipStrokeWidth="1dp" />
 
                         <com.google.android.material.chip.Chip
                             style="@style/Widget.MaterialComponents.Chip.Choice"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginRight="6dp"
                             android:layout_marginBottom="10dp"
                             android:checkable="false"
+                            android:text="@string/search_mate_director4"
+                            android:textColor="@color/watcha_pink"
+                            android:textSize="16sp"
                             app:chipBackgroundColor="@color/watcha_black"
                             app:chipStrokeColor="@color/watcha_pink"
-                            app:chipStrokeWidth="1dp"
+                            app:chipStrokeWidth="1dp" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:checkable="false"
+                            android:text="@string/search_mate_director5"
                             android:textColor="@color/watcha_pink"
                             android:textSize="16sp"
-                            android:text="@string/search_mate_director5"/>
-
-                        <com.google.android.material.chip.Chip
-                            style="@style/Widget.MaterialComponents.Chip.Choice"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginRight="6dp"
-                            android:layout_marginBottom="10dp"
-                            android:checkable="false"
-                            app:chipBackgroundColor="@color/watcha_pink"
-                            android:textSize="16sp"
-                            android:text="@string/search_mate_actor5"/>
-
-                        <com.google.android.material.chip.Chip
-                            style="@style/Widget.MaterialComponents.Chip.Choice"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginRight="6dp"
-                            android:layout_marginBottom="10dp"
-                            android:checkable="false"
-                            app:chipBackgroundColor="@color/watcha_pink"
-                            android:textSize="16sp"
-                            android:text="@string/search_mate_actor6"/>
-
-                        <com.google.android.material.chip.Chip
-                            style="@style/Widget.MaterialComponents.Chip.Choice"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginRight="6dp"
-                            android:layout_marginBottom="10dp"
-                            android:checkable="false"
-                            app:chipBackgroundColor="@color/watcha_pink"
-                            android:textSize="16sp"
-                            android:text="@string/search_mate_actor7"/>
-
-                        <com.google.android.material.chip.Chip
-                            style="@style/Widget.MaterialComponents.Chip.Choice"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginRight="6dp"
-                            android:layout_marginBottom="10dp"
-                            android:checkable="false"
-                            app:chipBackgroundColor="@color/watcha_pink"
-                            android:textSize="16sp"
-                            android:text="@string/search_mate_actor8"/>
-
-                        <com.google.android.material.chip.Chip
-                            style="@style/Widget.MaterialComponents.Chip.Choice"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginRight="6dp"
-                            android:layout_marginBottom="10dp"
-                            android:checkable="false"
                             app:chipBackgroundColor="@color/watcha_black"
                             app:chipStrokeColor="@color/watcha_pink"
-                            app:chipStrokeWidth="1dp"
-                            android:textColor="@color/watcha_pink"
-                            android:textSize="16sp"
-                            android:text="@string/search_mate_director6"/>
+                            app:chipStrokeWidth="1dp" />
 
                         <com.google.android.material.chip.Chip
                             style="@style/Widget.MaterialComponents.Chip.Choice"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginRight="6dp"
                             android:layout_marginBottom="10dp"
                             android:checkable="false"
-                            app:chipBackgroundColor="@color/watcha_black"
-                            app:chipStrokeColor="@color/watcha_pink"
-                            app:chipStrokeWidth="1dp"
+                            android:text="@string/search_mate_actor5"
+                            android:textColor="@color/watcha_bg"
+                            android:textSize="16sp"
+                            app:chipBackgroundColor="@color/watcha_pink" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:checkable="false"
+                            android:text="@string/search_mate_actor6"
+                            android:textColor="@color/watcha_bg"
+                            android:textSize="16sp"
+                            app:chipBackgroundColor="@color/watcha_pink" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:checkable="false"
+                            android:text="@string/search_mate_actor7"
+                            android:textColor="@color/watcha_bg"
+                            android:textSize="16sp"
+                            app:chipBackgroundColor="@color/watcha_pink" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:checkable="false"
+                            android:text="@string/search_mate_actor8"
+                            android:textColor="@color/watcha_bg"
+                            android:textSize="16sp"
+                            app:chipBackgroundColor="@color/watcha_pink" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:checkable="false"
+                            android:text="@string/search_mate_director6"
                             android:textColor="@color/watcha_pink"
                             android:textSize="16sp"
-                            android:text="@string/search_mate_director7"/>
+                            app:chipBackgroundColor="@color/watcha_black"
+                            app:chipStrokeColor="@color/watcha_pink"
+                            app:chipStrokeWidth="1dp" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:checkable="false"
+                            android:text="@string/search_mate_director7"
+                            android:textColor="@color/watcha_pink"
+                            android:textSize="16sp"
+                            app:chipBackgroundColor="@color/watcha_black"
+                            app:chipStrokeColor="@color/watcha_pink"
+                            app:chipStrokeWidth="1dp" />
 
                     </com.google.android.material.chip.ChipGroup>
                 </androidx.constraintlayout.widget.ConstraintLayout>
