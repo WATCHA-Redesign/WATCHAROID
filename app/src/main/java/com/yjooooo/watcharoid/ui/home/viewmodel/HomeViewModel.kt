@@ -43,17 +43,17 @@ class HomeViewModel : ViewModel() {
         _pediaList.value = mutableListOf(
             PediaData(
                 R.drawable.card_main_highkick,
-                "+23",
+                23,
                 "거침없이 무야호",
                 "거침없이 하이킥: 에피소드 157",
-                "봉준호사랑해님 외 27명 시청 중"
+                "봉준호사랑해"
             ),
             PediaData(
-                R.drawable.card_main_big_img_android,
-                "+14",
+                R.drawable.card_main_big_img_party,
+                14,
                 "대만영화",
                 "상견니",
-                "현경님 외 14명 시청 중"
+                "현경"
             )
         )
     }

@@ -24,7 +24,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="ContentDescription"
-            tools:srcCompat="@drawable/card_main_big_img_android" />
+            tools:srcCompat="@drawable/card_main_big_img_party" />
 
         <TextView
             android:id="@+id/tv_pedia_num"
@@ -32,7 +32,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="153dp"
             android:layout_marginEnd="83dp"
-            android:text="@{pediaData.num}"
+            setPediaNumber="@{pediaData.num}"
+            android:textSize="12sp"
             android:textColor="@color/watcha_gray_2"
             app:layout_constraintEnd_toEndOf="@+id/iv_pedia"
             app:layout_constraintTop_toTopOf="parent"
