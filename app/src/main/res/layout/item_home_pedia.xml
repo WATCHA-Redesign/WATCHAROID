@@ -24,7 +24,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="ContentDescription"
-            tools:srcCompat="@drawable/card_main_big_img_party" />
+            tools:srcCompat="@drawable/card_main_big_img_android" />
 
         <TextView
             android:id="@+id/tv_pedia_num"
@@ -64,7 +64,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
-            android:text="@{pediaData.watcher}"
+            setPediaNum="@{pediaData.num}"
+            setPediaWatcher="@{pediaData.watcher}"
             android:textColor="@color/inactive"
             android:textSize="10sp"
             app:layout_constraintStart_toStartOf="parent"
