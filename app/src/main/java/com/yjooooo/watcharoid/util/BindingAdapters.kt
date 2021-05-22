@@ -13,8 +13,15 @@ object BindingAdapters {
 
     @BindingAdapter("setPediaNum", "setPediaWatcher")
     @JvmStatic
-    fun setPediaWatcher(textView: TextView, num: String, watcher: String) {
+    fun setPediaWatcher(textView: TextView, num: Int, watcher: String) {
         val txt = watcher + "님 외 $num 명 시청 중"
+        textView.text = txt
+    }
+
+    @BindingAdapter("setPediaNumber")
+    @JvmStatic
+    fun setPediaNumber(textView : TextView, num: Int) {
+        val txt = "+$num"
         textView.text = txt
     }
 }
