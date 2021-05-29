@@ -1,6 +1,5 @@
 package com.yjooooo.watcharoid.ui.home.viewmodel
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -87,12 +86,7 @@ class HomeViewModel : ViewModel() {
 
     fun requestBannerList() = viewModelScope.launch(Dispatchers.IO) {
         try {
-            Log.d("server_tag","success")
-            //val responseBannerList = RetrofitBuilder.homeYjooService.getMainBanner()
-            //Log.d("server_tag",responseBannerList.data.mainBanner.toString())
             _bannerList.postValue(RetrofitBuilder.homeYjooService.getMainBanner().data.mainBanner)
-            Log.d("server_tag",bannerList.value.toString())
-            Log.d("server_tag","success2")
         } catch (e: HttpException) {
 
         }

@@ -22,7 +22,7 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>(R.layout.fragment_sea
     ): View {
         super.onCreateView(inflater, container, savedInstanceState)
         binding.lifecycleOwner = this
-        searchViewModel.setHighScoreList()
+        searchViewModel.requestHighScoreList()
         setHighScoreRcvAdapter()
         setHighScoreListObserve()
 

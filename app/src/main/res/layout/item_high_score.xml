@@ -6,7 +6,7 @@
 
         <variable
             name="highScoreData"
-            type="com.yjooooo.watcharoid.ui.search.model.HighScoreData" />
+            type="com.yjooooo.watcharoid.ui.search.model.HighScore" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -15,7 +15,7 @@
         android:layout_marginEnd="-6dp">
 
         <ImageView
-            setSrc="@{highScoreData.imgId}"
+            setSrcFromUrl="@{highScoreData.image}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:ignore="ContentDescription,MissingConstraints" />

@@ -13,8 +13,8 @@ data class ResponseHighScoreList(
 )
 
 data class Data(
-    @SerializedName("mainPedia")
-    val highScore: List<HighScore>
+    @SerializedName("searchHigh")
+    val highScoreList: List<HighScore>
 )
 
 data class HighScore(
