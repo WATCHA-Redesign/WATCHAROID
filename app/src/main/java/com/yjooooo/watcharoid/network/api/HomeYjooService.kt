@@ -7,8 +7,8 @@ interface HomeYjooService {
     fun getMainBanner(){
 
     }
-    @GET("/mainview/pedia")
-    fun getWatchaPedia(){
+    @GET("/mainview/watching")
+    fun getWatchingList(){
 
     }
 }
