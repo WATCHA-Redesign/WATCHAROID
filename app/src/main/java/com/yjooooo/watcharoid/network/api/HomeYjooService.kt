@@ -7,6 +7,7 @@ import retrofit2.http.GET
 interface HomeYjooService {
     @GET("/mainview/banner")
     suspend fun getMainBanner(): ResponseBannerList
+
     @GET("/mainview/watching")
     suspend fun getWatchingList(): ResponseWatchingList
 }
