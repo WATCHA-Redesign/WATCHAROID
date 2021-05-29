@@ -5,7 +5,7 @@ import com.yjooooo.watcharoid.ui.home.model.ResponseWatchingList
 import retrofit2.http.GET
 
 interface HomeYjooService {
-    @GET("mainview/banner")
+    @GET("mainpage/banner")
     suspend fun getMainBanner(): ResponseBannerList
 
     @GET("mainview/watching")

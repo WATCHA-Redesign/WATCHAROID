@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
         <variable
             name="bannerData"
-            type="com.yjooooo.watcharoid.ui.home.model.BannerData" />
+            type="com.yjooooo.watcharoid.ui.home.model.MainBanner" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -14,10 +15,40 @@
         android:layout_height="match_parent">
 
         <ImageView
-            setSrc="@{bannerData.imgId}"
+            setSrcFromUrl="@{bannerData.image}"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/largeTitle_item_banner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:fontFamily="@font/notosans_bold"
+            android:includeFontPadding="false"
+            android:text="@{bannerData.largeTitle}"
+            android:textColor="@color/white"
+            android:textSize="32sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.825" />
+
+        <TextView
+            android:id="@+id/desc_item_banner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/notosans_semi_bold"
+            android:includeFontPadding="false"
+            android:lineSpacingExtra="-2dp"
+            android:text="@{bannerData.description}"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@id/largeTitle_item_banner"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.92"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

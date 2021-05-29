@@ -6,13 +6,13 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.yjooooo.watcharoid.R
 import com.yjooooo.watcharoid.databinding.ItemBannerBinding
-import com.yjooooo.watcharoid.ui.home.model.BannerData
+import com.yjooooo.watcharoid.ui.home.model.MainBanner
 
 class BannerViewPagerAdapter : RecyclerView.Adapter<BannerViewPagerAdapter.BannerViewHolder>() {
-    private var bannerList = emptyList<BannerData>()
+    private var bannerList = emptyList<MainBanner>()
     class BannerViewHolder(private val binding: ItemBannerBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(bannerData: BannerData) {
+        fun bind(bannerData: MainBanner) {
             binding.bannerData = bannerData
         }
     }
@@ -35,7 +35,7 @@ class BannerViewPagerAdapter : RecyclerView.Adapter<BannerViewPagerAdapter.Banne
 
     override fun getItemCount(): Int = bannerList.size
 
-    fun setBanners(bannerList: List<BannerData>) {
+    fun setBanners(bannerList: List<MainBanner>) {
         this.bannerList = bannerList
         notifyDataSetChanged()
     }
