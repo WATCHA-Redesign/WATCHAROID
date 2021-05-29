@@ -1,4 +1,4 @@
-package com.yjooooo.watcharoid.ui.home.model
+package com.yjooooo.watcharoid.ui.search.model
 
 
 import com.google.gson.annotations.SerializedName
@@ -14,10 +14,10 @@ data class ResponseHighScoreList(
 
 data class Data(
     @SerializedName("mainPedia")
-    val mainPedia: List<MainPedia>
+    val highScore: List<HighScore>
 )
 
-data class MainPedia(
+data class HighScore(
     @SerializedName("image")
     val image: String,
     @SerializedName("name")
