@@ -3,12 +3,22 @@ package com.yjooooo.watcharoid.util
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
+import com.bumptech.glide.Glide
 
 object BindingAdapters {
     @BindingAdapter("setSrc")
     @JvmStatic
     fun setSrc(imageView: ImageView, imgId: Int) {
         imageView.setImageResource(imgId)
+    }
+
+    @BindingAdapter("setSrcFromUrl")
+    @JvmStatic
+    fun setSrcFromUrl(imageView: ImageView, url: String) {
+        Glide.with(imageView.context)
+            .load(url)
+            .centerCrop()
+            .into(imageView)
     }
 
     @BindingAdapter("setPediaNum", "setPediaWatcher")
