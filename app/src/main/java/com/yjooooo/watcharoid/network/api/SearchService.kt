@@ -4,15 +4,9 @@ import retrofit2.http.GET
 
 interface SearchService {
     @GET("/searchpage/popular")
-    fun getPopularSearch(){
-
-    }
+    fun getPopularSearch()
     @GET("/searchpage/collection")
-    fun getWatchaCollection(){
-
-    }
+    fun getWatchaCollection()
     @GET("searchpage/mate")
-    fun getMovieMate(){
-
-    }
+    fun getMovieMate()
 }

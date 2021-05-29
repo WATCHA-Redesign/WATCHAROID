@@ -4,11 +4,7 @@ import retrofit2.http.GET
 
 interface HomeService {
     @GET("/mainview/pedia")
-    fun getWatchaPedia(){
-
-    }
+    fun getWatchaPedia()
     @GET("mainview/recommend")
-    fun getRecommendList(){
-
-    }
+    fun getRecommendList()
 }
