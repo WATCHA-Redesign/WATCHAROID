@@ -40,7 +40,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
         setTodayAdapter()
         setTodayListObserve()
 
-        homeViewModel.setContinueList()
+        homeViewModel.requestWatchingList()
         setContinueAdapter()
         setContinueListObserve()
 

@@ -8,6 +8,6 @@ interface HomeYjooService {
     @GET("mainpage/banner")
     suspend fun getMainBanner(): ResponseBannerList
 
-    @GET("mainview/watching")
+    @GET("mainpage/watching")
     suspend fun getWatchingList(): ResponseWatchingList
 }
