@@ -65,6 +65,7 @@
             android:text="@{continueData.title}"
             android:textColor="@color/watcha_lightgray"
             android:textSize="12sp"
+            android:fontFamily="@font/notosans_regular"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/iv_continue" />
     </androidx.constraintlayout.widget.ConstraintLayout>
