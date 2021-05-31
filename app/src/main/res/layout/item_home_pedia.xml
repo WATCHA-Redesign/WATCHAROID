@@ -17,10 +17,9 @@
 
         <ImageView
             android:id="@+id/iv_pedia"
-            setSrc="@{pediaData.imgId}"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
+            setSrcFromUrl="@{pediaData.imgUrl}"
+            android:layout_width="335dp"
+            android:layout_height="213dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="ContentDescription"
@@ -44,9 +43,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="34dp"
-            android:text="@{pediaData.name}"
+            android:text="@{pediaData.title}"
             android:textColor="@color/watcha_lightgray"
             android:textSize="14sp"
+            tools:text="대만영화"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_pedia_num" />
 
@@ -57,6 +57,7 @@
             android:text="@{pediaData.episode}"
             android:textColor="@color/watcha_pink"
             android:textSize="12sp"
+            tools:text="상견니"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_pedia_name" />
 
@@ -69,6 +70,7 @@
             setPediaWatcher="@{pediaData.watcher}"
             android:textColor="@color/inactive"
             android:textSize="10sp"
+            tools:text="한경 님 외 29명 시청중"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_pedia_episode" />
 
