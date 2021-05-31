@@ -133,6 +133,7 @@
                         android:text="@string/search_fg_high_score"
                         android:textColor="@color/watcha_white"
                         android:textSize="14sp"
+                        android:textStyle="bold"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -153,11 +154,12 @@
                         android:layout_width="match_parent"
                         android:layout_height="350dp"
                         android:layout_marginTop="16dp"
-                        android:layout_marginBottom="12dp"
+                        android:layout_marginBottom="16dp"
                         android:clipToPadding="false"
                         android:orientation="horizontal"
                         android:overScrollMode="never"
-                        android:paddingStart="12dp"
+                        android:paddingStart="8dp"
+                        android:paddingEnd="4dp"
                         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"

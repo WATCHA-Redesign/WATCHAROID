@@ -20,6 +20,8 @@ data class Data(
 data class HighScore(
     @SerializedName("image")
     val image: String,
-    @SerializedName("name")
-    val name: String
+    @SerializedName("title")
+    val title: String,
+    @SerializedName("subtitle")
+    val subtitle: String
 )
