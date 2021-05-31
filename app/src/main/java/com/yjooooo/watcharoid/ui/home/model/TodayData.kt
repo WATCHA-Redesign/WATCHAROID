@@ -1,6 +1,6 @@
 package com.yjooooo.watcharoid.ui.home.model
 
 data class TodayData(
-    val imgId: Int,
+    val imgUrl: String,
     val title : String
 )

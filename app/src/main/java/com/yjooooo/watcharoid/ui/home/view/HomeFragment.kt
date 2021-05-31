@@ -33,11 +33,11 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
         setBannerListObserve()
         setIndicator()
 
-        homeViewModel.setPediaList()
+        homeViewModel.getPediaList()
         setPediaAdapter()
         setPediaListObserve()
 
-        homeViewModel.setTodayList()
+        homeViewModel.getTodayList()
         setTodayAdapter()
         setTodayListObserve()
 
