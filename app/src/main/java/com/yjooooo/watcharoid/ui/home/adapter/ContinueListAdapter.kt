@@ -16,6 +16,7 @@ class ContinueListAdapter: RecyclerView.Adapter<ContinueListAdapter.ContinueView
         fun bind(continueData: MainWatching){
             binding.continueData = continueData
             binding.seekBarContinue.progress = continueData.progress.toFloat()
+            binding.seekBarContinue.isEnabled = false
         }
     }
 
