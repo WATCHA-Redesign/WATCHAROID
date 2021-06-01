@@ -16,6 +16,7 @@
         android:layout_marginEnd="4dp">
 
         <ImageView
+            android:id="@+id/img_high_score"
             setSrcFromUrl="@{highScoreData.image}"
             android:layout_width="238dp"
             android:layout_height="356dp"
@@ -31,17 +32,17 @@
             android:textColor="@color/watcha_white"
             android:textSize="24sp"
             android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintStart_toStartOf="@id/img_high_score"
+            app:layout_constraintTop_toTopOf="@id/img_high_score" />
 
         <TextView
             android:id="@+id/tv_high_score_subtitle"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
             android:text="@{highScoreData.subtitle}"
             android:textColor="@color/watcha_white"
             android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@id/img_high_score"
             app:layout_constraintStart_toStartOf="@id/tv_high_score_title"
             app:layout_constraintTop_toBottomOf="@id/tv_high_score_title" />
 
