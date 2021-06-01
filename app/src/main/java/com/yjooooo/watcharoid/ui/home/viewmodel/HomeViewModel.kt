@@ -1,29 +1,18 @@
 package com.yjooooo.watcharoid.ui.home.viewmodel
 
 import android.util.Log
-import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.yjooooo.watcharoid.R
-import com.yjooooo.watcharoid.network.api.RetrofitBuilder
-import com.yjooooo.watcharoid.ui.home.model.MainBanner
-import com.yjooooo.watcharoid.ui.home.model.MainWatching
-import com.yjooooo.watcharoid.ui.home.model.PediaData
-import com.yjooooo.watcharoid.ui.home.model.TodayData
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import retrofit2.HttpException
-import com.google.gson.Gson
-import com.google.gson.reflect.TypeToken
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
-import com.yjooooo.watcharoid.R
-import com.yjooooo.watcharoid.network.api.HomeService
 import com.yjooooo.watcharoid.network.api.RetrofitBuilder
 import com.yjooooo.watcharoid.ui.home.model.*
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.HttpException
+import retrofit2.Response
 
 class HomeViewModel : ViewModel() {
     private val _bannerList = MutableLiveData<List<MainBanner>>()
@@ -57,34 +46,33 @@ class HomeViewModel : ViewModel() {
 
         }
     }
-
-}
-
     fun getPediaList() {
         val call = RetrofitBuilder.homeService.getWatchaPedia()
         call.enqueue(object : Callback<ResponsePediaList> {
             override fun onResponse(
                 call: Call<ResponsePediaList>, response: Response<ResponsePediaList>
             ) {
-               if(response.isSuccessful){
+                if (response.isSuccessful) {
 
-                   val list = mutableListOf<PediaData>()
-                   val data = response.body()?.data
-                   val pedia = data?.mainPedia
+                    val list = mutableListOf<PediaData>()
+                    val data = response.body()?.data
+                    val pedia = data?.mainPedia
 
-                   if (pedia != null) {
-                       for(i in pedia.indices){
-                           list.add(PediaData(
-                               pedia[i].image,
-                               pedia[i].title,
-                               pedia[i].titleDetail,
-                               pedia[i].watchingNum,
-                               pedia[i].nickname
-                           ))
-                       }
-                   }
-                   _pediaList.value = list
-               }
+                    if (pedia != null) {
+                        for (i in pedia.indices) {
+                            list.add(
+                                PediaData(
+                                    pedia[i].image,
+                                    pedia[i].title,
+                                    pedia[i].titleDetail,
+                                    pedia[i].watchingNum,
+                                    pedia[i].nickname
+                                )
+                            )
+                        }
+                    }
+                    _pediaList.value = list
+                }
             }
 
             override fun onFailure(call: Call<ResponsePediaList>, t: Throwable) {
@@ -99,17 +87,19 @@ class HomeViewModel : ViewModel() {
             override fun onResponse(
                 call: Call<ResponseRecommendList>, response: Response<ResponseRecommendList>
             ) {
-                if(response.isSuccessful){
+                if (response.isSuccessful) {
                     val list = mutableListOf<TodayData>()
                     val data = response.body()?.data
                     val recommend = data?.mainRecommend
 
-                    if(recommend != null){
-                        for(i in recommend.indices){
-                            list.add(TodayData(
-                                recommend[i].image,
-                                recommend[i].title
-                            ))
+                    if (recommend != null) {
+                        for (i in recommend.indices) {
+                            list.add(
+                                TodayData(
+                                    recommend[i].image,
+                                    recommend[i].title
+                                )
+                            )
                         }
 
                         _todayList.value = list
@@ -123,5 +113,5 @@ class HomeViewModel : ViewModel() {
             }
         })
     }
-
 }
+
