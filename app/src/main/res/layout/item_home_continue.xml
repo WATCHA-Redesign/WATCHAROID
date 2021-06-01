@@ -4,51 +4,69 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-       <variable
-           name="continueData"
-           type="com.yjooooo.watcharoid.ui.home.model.ContinueData" />
+
+        <variable
+            name="continueData"
+            type="com.yjooooo.watcharoid.ui.home.model.MainWatching" />
     </data>
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="4dp">
+        android:layout_marginEnd="-6dp">
 
         <ImageView
             android:id="@+id/iv_continue"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            setSrc="@{continueData.imgId}"
+            setSrcFromUrl="@{continueData.image}"
+            android:layout_width="176dp"
+            android:layout_height="106dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:srcCompat="@drawable/card_small"
-            tools:ignore="ContentDescription" />
-
-        <ImageButton
-            android:id="@+id/ib_continue_play"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="61dp"
-            android:layout_marginTop="26dp"
-            android:layout_marginEnd="61dp"
-            android:background="@android:color/transparent"
-            app:layout_constraintEnd_toEndOf="@+id/iv_continue"
-            app:layout_constraintHorizontal_bias="0.75"
-            app:layout_constraintStart_toStartOf="@+id/iv_continue"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/btn_play_android_3"
             tools:ignore="ContentDescription" />
 
         <TextView
             android:id="@+id/tv_continue_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="96dp"
+            android:fontFamily="@font/notosans_regular"
             android:text="@{continueData.title}"
             android:textColor="@color/watcha_lightgray"
             android:textSize="12sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/iv_continue" />
+            app:layout_constraintStart_toStartOf="@id/iv_continue"
+            app:layout_constraintTop_toTopOf="@id/iv_continue" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:padding="2dp"
+            android:src="@drawable/bg_seek_bar"
+            app:layout_constraintBottom_toBottomOf="@id/seek_bar_continue"
+            app:layout_constraintEnd_toEndOf="@id/seek_bar_continue"
+            app:layout_constraintStart_toStartOf="@id/seek_bar_continue"
+            app:layout_constraintTop_toTopOf="@id/seek_bar_continue"
+            tools:ignore="ContentDescription" />
+
+        <me.tankery.lib.circularseekbar.CircularSeekBar
+            android:id="@+id/seek_bar_continue"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_marginTop="28dp"
+            android:visibility="visible"
+            app:cs_circle_color="@color/watcha_bg"
+            app:cs_circle_progress_color="@color/watcha_pink"
+            app:cs_circle_stroke_width="2dp"
+            app:cs_circle_style="round"
+            app:cs_end_angle="270.0"
+            app:cs_negative_enabled="true"
+            app:cs_pointer_color="@color/watcha_pink"
+            app:cs_pointer_stroke_width="2dp"
+            app:cs_progress="0"
+            app:cs_start_angle="270.0"
+            app:layout_constraintEnd_toEndOf="@id/iv_continue"
+            app:layout_constraintStart_toStartOf="@id/iv_continue"
+            app:layout_constraintTop_toTopOf="@id/iv_continue" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

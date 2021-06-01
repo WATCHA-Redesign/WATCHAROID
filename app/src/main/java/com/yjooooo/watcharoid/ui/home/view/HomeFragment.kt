@@ -1,7 +1,6 @@
 package com.yjooooo.watcharoid.ui.home.view
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -27,7 +26,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
     ): View {
         super.onCreateView(inflater, container, savedInstanceState)
         binding.lifecycleOwner = this
-        homeViewModel.setBannerList()
+        homeViewModel.requestBannerList()
         fadeInAtScrolling()
         setBannerViewPagerAdapter()
         setBannerListObserve()
@@ -41,7 +40,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
         setTodayAdapter()
         setTodayListObserve()
 
-        homeViewModel.setContinueList()
+        homeViewModel.requestWatchingList()
         setContinueAdapter()
         setContinueListObserve()
 
@@ -116,7 +115,4 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
                 }
         }
     }
-
-
-
 }

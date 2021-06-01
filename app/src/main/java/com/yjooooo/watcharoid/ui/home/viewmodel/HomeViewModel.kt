@@ -5,6 +5,16 @@ import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.yjooooo.watcharoid.R
+import com.yjooooo.watcharoid.network.api.RetrofitBuilder
+import com.yjooooo.watcharoid.ui.home.model.MainBanner
+import com.yjooooo.watcharoid.ui.home.model.MainWatching
+import com.yjooooo.watcharoid.ui.home.model.PediaData
+import com.yjooooo.watcharoid.ui.home.model.TodayData
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import retrofit2.HttpException
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import retrofit2.Call
@@ -16,8 +26,8 @@ import com.yjooooo.watcharoid.network.api.RetrofitBuilder
 import com.yjooooo.watcharoid.ui.home.model.*
 
 class HomeViewModel : ViewModel() {
-    private val _bannerList = MutableLiveData<List<BannerData>>()
-    val bannerList: LiveData<List<BannerData>>
+    private val _bannerList = MutableLiveData<List<MainBanner>>()
+    val bannerList: LiveData<List<MainBanner>>
         get() = _bannerList
 
     private val _pediaList = MutableLiveData<List<PediaData>>()
@@ -28,39 +38,27 @@ class HomeViewModel : ViewModel() {
     val todayList: LiveData<List<TodayData>>
         get() = _todayList
 
-    private val _continueList = MutableLiveData<List<ContinueData>>()
-    val continueList: LiveData<List<ContinueData>>
+    private val _continueList = MutableLiveData<List<MainWatching>>()
+    val continueList: LiveData<List<MainWatching>>
         get() = _continueList
 
+    fun requestBannerList() = viewModelScope.launch(Dispatchers.IO) {
+        try {
+            _bannerList.postValue(RetrofitBuilder.homeYjooService.getMainBanner().data.mainBanner)
+        } catch (e: HttpException) {
 
-    fun setBannerList() {
-        _bannerList.value = mutableListOf(
-            BannerData(R.drawable.img_vp_home_1),
-            BannerData(R.drawable.img_vp_home_2),
-            BannerData(R.drawable.img_vp_home_3),
-            BannerData(R.drawable.img_vp_home_4),
-            BannerData(R.drawable.img_vp_home_5),
-            BannerData(R.drawable.img_vp_home_6),
-            BannerData(R.drawable.img_vp_home_7)
-        )
+        }
     }
 
-    fun setContinueList() {
-        _continueList.value = mutableListOf(
-            ContinueData(
-                R.drawable.card_small,
-                "캐롤"
-            ),
-            ContinueData(
-                R.drawable.card_small_2,
-                "검정 고무신"
-            ),
-            ContinueData(
-                R.drawable.card_small_3,
-                "시카고"
-            )
-        )
+    fun requestWatchingList() = viewModelScope.launch(Dispatchers.IO) {
+        try {
+            _continueList.postValue(RetrofitBuilder.homeYjooService.getWatchingList().data.mainWatching)
+        } catch (e: HttpException) {
+
+        }
     }
+
+}
 
     fun getPediaList() {
         val call = RetrofitBuilder.homeService.getWatchaPedia()
@@ -127,4 +125,3 @@ class HomeViewModel : ViewModel() {
     }
 
 }
-

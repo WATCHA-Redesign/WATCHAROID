@@ -13,13 +13,15 @@ data class ResponseHighScoreList(
 )
 
 data class Data(
-    @SerializedName("mainPedia")
-    val highScore: List<HighScore>
+    @SerializedName("searchHigh")
+    val highScoreList: List<HighScore>
 )
 
 data class HighScore(
     @SerializedName("image")
     val image: String,
-    @SerializedName("name")
-    val name: String
+    @SerializedName("title")
+    val title: String,
+    @SerializedName("subtitle")
+    val subtitle: String
 )

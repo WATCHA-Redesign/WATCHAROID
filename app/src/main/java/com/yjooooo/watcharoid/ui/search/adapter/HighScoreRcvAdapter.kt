@@ -6,14 +6,14 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.yjooooo.watcharoid.R
 import com.yjooooo.watcharoid.databinding.ItemHighScoreBinding
-import com.yjooooo.watcharoid.ui.search.model.HighScoreData
+import com.yjooooo.watcharoid.ui.search.model.HighScore
 
 class HighScoreRcvAdapter : RecyclerView.Adapter<HighScoreRcvAdapter.HighScoreViewHolder>() {
-    private var highScoreList = emptyList<HighScoreData>()
+    private var highScoreList = emptyList<HighScore>()
 
     class HighScoreViewHolder(private val binding: ItemHighScoreBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(highScoreData: HighScoreData) {
+        fun bind(highScoreData: HighScore) {
             binding.highScoreData = highScoreData
         }
     }
@@ -36,7 +36,7 @@ class HighScoreRcvAdapter : RecyclerView.Adapter<HighScoreRcvAdapter.HighScoreVi
 
     override fun getItemCount(): Int = highScoreList.size
 
-    fun setHighScoreList(highScoreList: List<HighScoreData>) {
+    fun setHighScoreList(highScoreList: List<HighScore>) {
         this.highScoreList = highScoreList
         notifyDataSetChanged()
     }
