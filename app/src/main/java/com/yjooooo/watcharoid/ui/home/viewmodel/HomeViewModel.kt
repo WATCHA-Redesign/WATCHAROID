@@ -1,5 +1,7 @@
 package com.yjooooo.watcharoid.ui.home.viewmodel
 
+import android.util.Log
+import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -13,6 +15,15 @@ import com.yjooooo.watcharoid.ui.home.model.TodayData
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import retrofit2.HttpException
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import com.yjooooo.watcharoid.R
+import com.yjooooo.watcharoid.network.api.HomeService
+import com.yjooooo.watcharoid.network.api.RetrofitBuilder
+import com.yjooooo.watcharoid.ui.home.model.*
 
 class HomeViewModel : ViewModel() {
     private val _bannerList = MutableLiveData<List<MainBanner>>()
@@ -31,42 +42,6 @@ class HomeViewModel : ViewModel() {
     val continueList: LiveData<List<MainWatching>>
         get() = _continueList
 
-    fun setPediaList() {
-        _pediaList.value = mutableListOf(
-            PediaData(
-                R.drawable.card_main_highkick,
-                23,
-                "거침없이 무야호",
-                "거침없이 하이킥: 에피소드 157",
-                "봉준호사랑해"
-            ),
-            PediaData(
-                R.drawable.card_main_big_img_party,
-                14,
-                "대만영화",
-                "상견니",
-                "현경"
-            )
-        )
-    }
-
-    fun setTodayList() {
-        _todayList.value = mutableListOf(
-            TodayData(
-                R.drawable.card_small_img_android_4,
-                "싱스트리트"
-            ),
-            TodayData(
-                R.drawable.card_small_img_android_5,
-                "드림걸즈"
-            ),
-            TodayData(
-                R.drawable.card_small_img_android_6,
-                "하하하 냥이네"
-            )
-        )
-    }
-
     fun requestBannerList() = viewModelScope.launch(Dispatchers.IO) {
         try {
             _bannerList.postValue(RetrofitBuilder.homeYjooService.getMainBanner().data.mainBanner)
@@ -81,6 +56,72 @@ class HomeViewModel : ViewModel() {
         } catch (e: HttpException) {
 
         }
+    }
+
+}
+
+    fun getPediaList() {
+        val call = RetrofitBuilder.homeService.getWatchaPedia()
+        call.enqueue(object : Callback<ResponsePediaList> {
+            override fun onResponse(
+                call: Call<ResponsePediaList>, response: Response<ResponsePediaList>
+            ) {
+               if(response.isSuccessful){
+
+                   val list = mutableListOf<PediaData>()
+                   val data = response.body()?.data
+                   val pedia = data?.mainPedia
+
+                   if (pedia != null) {
+                       for(i in pedia.indices){
+                           list.add(PediaData(
+                               pedia[i].image,
+                               pedia[i].title,
+                               pedia[i].titleDetail,
+                               pedia[i].watchingNum,
+                               pedia[i].nickname
+                           ))
+                       }
+                   }
+                   _pediaList.value = list
+               }
+            }
+
+            override fun onFailure(call: Call<ResponsePediaList>, t: Throwable) {
+                Log.d("NetworkTest", "error:$t")
+            }
+        })
+    }
+
+    fun getTodayList() {
+        val call = RetrofitBuilder.homeService.getRecommendList()
+        call.enqueue(object : Callback<ResponseRecommendList> {
+            override fun onResponse(
+                call: Call<ResponseRecommendList>, response: Response<ResponseRecommendList>
+            ) {
+                if(response.isSuccessful){
+                    val list = mutableListOf<TodayData>()
+                    val data = response.body()?.data
+                    val recommend = data?.mainRecommend
+
+                    if(recommend != null){
+                        for(i in recommend.indices){
+                            list.add(TodayData(
+                                recommend[i].image,
+                                recommend[i].title
+                            ))
+                        }
+
+                        _todayList.value = list
+                    }
+
+                }
+            }
+
+            override fun onFailure(call: Call<ResponseRecommendList>, t: Throwable) {
+                Log.d("NetworkTest", "error:$t")
+            }
+        })
     }
 
 }

@@ -1,12 +1,15 @@
 package com.yjooooo.watcharoid.network.api
 
+import com.yjooooo.watcharoid.ui.search.model.ResponseMovieMateList
+import com.yjooooo.watcharoid.ui.search.model.ResponsePopularSearchList
+import retrofit2.Call
 import retrofit2.http.GET
 
 interface SearchService {
     @GET("searchpage/popular")
-    fun getPopularSearch()
+    fun getPopularSearch() : Call<ResponsePopularSearchList>
     @GET("searchpage/collection")
     fun getWatchaCollection()
     @GET("searchpage/mate")
-    fun getMovieMate()
+    fun getMovieMate() : Call<ResponseMovieMateList>
 }
