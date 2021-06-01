@@ -10,7 +10,7 @@ import com.yjooooo.watcharoid.R
 import com.yjooooo.watcharoid.databinding.FragmentSearchBinding
 import com.yjooooo.watcharoid.ui.base.BaseFragment
 import com.yjooooo.watcharoid.ui.search.adapter.HighScoreRcvAdapter
-import com.yjooooo.watcharoid.ui.search.adapter.TopSearchRcvAdapter
+import com.yjooooo.watcharoid.ui.search.adapter.PopularSearchRcvAdapter
 import com.yjooooo.watcharoid.ui.search.viewmodel.SearchViewModel
 
 
@@ -26,7 +26,7 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>(R.layout.fragment_sea
         setHighScoreRcvAdapter()
         setHighScoreListObserve()
 
-        searchViewModel.setTopSearchContentList()
+        searchViewModel.getPopularSearchContentList()
         setTopSearchRcvAdapter()
         setTopSearchContentListObserve()
 
@@ -47,12 +47,12 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>(R.layout.fragment_sea
 
     private fun setTopSearchRcvAdapter() {
         binding.rvSearchTop.adapter =
-            TopSearchRcvAdapter()
+            PopularSearchRcvAdapter()
     }
 
     private fun setTopSearchContentListObserve() {
-        searchViewModel.topSearchContentList.observe(viewLifecycleOwner) { topSearchList ->
-            with(binding.rvSearchTop.adapter as TopSearchRcvAdapter) {
+        searchViewModel.popularSearchList.observe(viewLifecycleOwner) { topSearchList ->
+            with(binding.rvSearchTop.adapter as PopularSearchRcvAdapter) {
                 setTopSearchList(topSearchList)
             }
         }
